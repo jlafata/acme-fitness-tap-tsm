@@ -48,6 +48,15 @@ spec:
       containers:
         - name: cart-redis
           image: bitnami/redis
+          # to run on openshift in restricted scc
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+            seccompProfile:
+              type: RuntimeDefault
           imagePullPolicy: Always
           resources:
             requests:

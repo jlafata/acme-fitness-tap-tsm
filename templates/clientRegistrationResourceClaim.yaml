@@ -3,12 +3,13 @@
 apiVersion: sso.apps.tanzu.vmware.com/v1alpha1
 kind: ClientRegistration
 metadata:
-   name: acme-fitness-client-registration
+   name: #@ data.values.clientRegistrationName
    namespace: #@ data.values.workloadNamespace
 spec:
    authServerSelector:
       matchLabels:
          name: appsso-acme-fitness
+         app: #@ data.values.applicationName
    redirectURIs: 
      - #@ data.values.appSSORedirectURI
    requireUserConsent: false
@@ -79,5 +80,5 @@ spec:
   ref:
     apiVersion: sso.apps.tanzu.vmware.com/v1alpha1
     kind: ClientRegistration
-    name: acme-fitness-client-registration
+    name: #@ data.values.clientRegistrationName
     namespace: #@ data.values.workloadNamespace

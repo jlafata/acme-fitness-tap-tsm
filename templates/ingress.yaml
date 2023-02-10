@@ -1,0 +1,15 @@
+#@ load("@ytt:data", "data")
+apiVersion: projectcontour.io/v1
+kind: HTTPProxy
+metadata:
+  name: gateway-proxy
+  namespace: #@ data.values.workloadNamespace
+spec:
+  virtualhost:
+    fqdn: #@ data.values.httpProxy.virtualhost.fqdn
+  routes:
+    - conditions:
+        - prefix: /
+      services:
+        - name: acme-fitness-gateway   # <spring cloud gateway service name> from kubectl get svc -n namespace-where-scg-instance-deployed
+          port: 80

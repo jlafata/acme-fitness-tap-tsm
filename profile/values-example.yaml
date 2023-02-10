@@ -1,0 +1,18 @@
+#@data/values
+---
+workloadNamespace: acme
+devDefaultAccountUsername: acme
+devDefaultAccountPassword: <redacted>
+ingressDomain: tap.synable.io
+applicationName: acme-fitness
+httpProxy:
+  virtualhost:
+    #    fqdn: <applicationName>.<ingressDomain>
+    fqdn: acme-fitness.tap.synable.io
+#appSSORedirectURI: http://<httpProxy.virtualHost.fqdn>/login/oauth2/code/sso
+appSSORedirectURI: http://acme-fitness.tap.synable.io/login/oauth2/code/sso
+#appSSORedirectURI: <applicationName>-client-registration
+clientRegistrationName: acme-fitness-client-registration
+#appSSOIssuerURI: http://appsso-<applicationName><workloadNamespace>.<ingressDomain>
+appSSOIssuerURI: http://appsso-acme-fitness.acme.tap.synable.io
+redisPassword: <redacted>
