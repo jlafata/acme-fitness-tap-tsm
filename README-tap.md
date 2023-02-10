@@ -1,6 +1,10 @@
 # acme-fitness-tap
 ACME fitness store build and deployment configuration for TAP 
 
+copy and edit the example parameter file 
+```
+cp profile/values-example.yaml profile/values.yaml
+```
 
 Execute this script 
 ```
