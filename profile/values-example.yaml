@@ -10,6 +10,7 @@ httpProxy:
     #    fqdn: <applicationName>.<ingressDomain>
     fqdn: acme-fitness.tap.example.com
 #appSSORedirectURI: http://<httpProxy.virtualHost.fqdn>/login/oauth2/code/sso
+appSSORedirectURI: http://acme-fitness.tap.example.com/login/oauth2/code/sso
 #clientRegistrationName: <applicationName>-client-registration
 clientRegistrationName: acme-fitness-client-registration
 #appSSOIssuerURI: http://appsso-<applicationName><workloadNamespace>.<ingressDomain>
